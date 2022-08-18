@@ -1,0 +1,21 @@
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+      bindings:
+#        default-binder: kafka
+        order_in:
+          destination: order
+          contentType: application/json
+        order_out:
+          destination: order
+          contentType: application/json
+
+
+
+server:
+  port: 4545
+  servlet:
+    context-path: /api
