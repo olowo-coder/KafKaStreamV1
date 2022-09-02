@@ -9,7 +9,7 @@ import java.io.Serializable;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CustomerEnrolInfo implements Serializable {
+public class InfoDisplay implements Serializable {
     private String customerId;
     private String offerId;
     private String accountNumber;

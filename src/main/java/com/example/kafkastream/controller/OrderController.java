@@ -1,6 +1,6 @@
 package com.example.kafkastream.controller;
 
-import com.example.kafkastream.model.CustomerEnrolInfo;
+import com.example.kafkastream.model.InfoDisplay;
 import com.example.kafkastream.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,7 +21,7 @@ public class OrderController {
     }
 
     @PostMapping
-    public ResponseEntity<?> sendOrder(@RequestBody final CustomerEnrolInfo info){
+    public ResponseEntity<?> sendOrder(@RequestBody final InfoDisplay info){
         return ResponseEntity.status(HttpStatus.CREATED).body(orderService.sendOrder(info));
     }
 

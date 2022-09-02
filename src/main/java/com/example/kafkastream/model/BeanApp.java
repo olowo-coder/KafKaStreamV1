@@ -7,10 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ApplicationBean {
+public class BeanApp {
 
     private String uuid;
     private String eventName;
     private long timeStamp;
-    private CustomerEnrolInfo customerEnrolInfo;
+    private InfoDisplay infoDisplay;
 }

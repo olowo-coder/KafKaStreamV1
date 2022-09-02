@@ -1,7 +1,7 @@
 package com.example.kafkastream.service;
 
-import com.example.kafkastream.model.ApplicationBean;
-import com.example.kafkastream.model.CustomerEnrolInfo;
+import com.example.kafkastream.model.BeanApp;
+import com.example.kafkastream.model.InfoDisplay;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,9 +18,9 @@ public class OrderService {
         this.kafkaPubService = kafkaPubService;
     }
 
-    public Map<String , String > sendOrder(CustomerEnrolInfo customerEnrolInfo){
-        kafkaPubService.sendingMessage(new ApplicationBean(UUID.randomUUID().toString(),
-            "order-event", System.currentTimeMillis(), customerEnrolInfo));
+    public Map<String , String > sendOrder(InfoDisplay infoDisplay){
+        kafkaPubService.sendingMessage(new BeanApp(UUID.randomUUID().toString(),
+            "order-event", System.currentTimeMillis(), infoDisplay));
         return Map.of("status", "Send Successful");
     }
 }
